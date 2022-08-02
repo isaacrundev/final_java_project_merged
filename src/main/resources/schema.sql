@@ -3,10 +3,8 @@ CREATE SEQUENCE IF NOT EXISTS employee_seq;
 
 CREATE TABLE IF NOT EXISTS employee(
     employee_id BIGINT NOT NULL DEFAULT nextval('employee_seq') PRIMARY KEY,
-    firstName VARCHAR(100) NOT NULL,
-    lastName VARCHAR(100) NOT NULL
-    email VARCHAR(100) NOT NULL
-    gender VARCHAR(100) NOT NULL
+    fulltName VARCHAR(100) NOT NULL,
+    birthday VARCHAR(100) NOT NULL
 );
 
 
