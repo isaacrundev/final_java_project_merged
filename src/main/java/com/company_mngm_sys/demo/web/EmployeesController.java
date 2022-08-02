@@ -10,12 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.company_mngm_sys.demo.dao.EmployeeRepo;
 import com.company_mngm_sys.demo.entity.Employees;
-
-import net.bytebuddy.asm.Advice.Return;
 
 @Controller // employeeをaddする用のクラス
 @RequestMapping("/employees") // URLとコントローラーのクラスまたはメソッドを紐づけることができるアノテーション
