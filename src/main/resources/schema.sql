@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS clients(
 
 CREATE SEQUENCE IF NOT EXISTS products_seq;
 CREATE TABLE IF NOT EXISTS products(
-    products_id BIGINT NOT NULL DEFAULT nextval('products_seq') PRIMARY KEY,
-    full_name VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL
+    productsId BIGINT NOT NULL DEFAULT nextval('products_seq') PRIMARY KEY,
+    productName VARCHAR(100) NOT NULL,
+    price VARCHAR(100) NOT NULL
 );
