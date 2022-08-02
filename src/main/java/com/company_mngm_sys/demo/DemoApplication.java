@@ -23,8 +23,7 @@ public class DemoApplication {
 	}
 
 	public void run() {
-		Employees em1 = new Employees("firstName", "lastName", "hikari@gmail.com", "female", 12071995);
-
+		Employees em1 = new Employees("fullName", 12071995);
 		empRepo.save(em1);
 	}
 
