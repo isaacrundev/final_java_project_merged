@@ -43,6 +43,7 @@ public class EmployeesController {
     // I'm gonna redirect to this page after adding
     @PostMapping("/save")
     public String createEmployees(Employees employees) {
+        // product.setProductId(0);??
         repo.save(employees);
         return "redirect:/employees"; // コロンはリクエストを返す
 
