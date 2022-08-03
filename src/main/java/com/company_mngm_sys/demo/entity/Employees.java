@@ -12,7 +12,7 @@ public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // tableになる
-    private long employeeID;
+    private long employeeId;
     // private String firstName;
     // private String lastName;
     private String fullName;
@@ -42,16 +42,12 @@ public class Employees {
         this.birthday = birthday;
     }
 
-    public long getEmployeeID() {
-        return employeeID;
+    public long getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployeeID(long employeeID) {
-        this.employeeID = employeeID;
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
     }
-
-   
-
-    
 
 }

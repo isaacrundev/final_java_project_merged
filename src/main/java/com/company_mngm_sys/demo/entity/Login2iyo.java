@@ -15,7 +15,7 @@ public class Login2iyo {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "employee_id")
+    @Column(name = "employeeId")
     private int employeeId;
     
     @Column(name = "fullName")
