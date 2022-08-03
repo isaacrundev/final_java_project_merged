@@ -91,4 +91,12 @@ public class Clients {
         this.notes = notes;
     }
 
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
 }

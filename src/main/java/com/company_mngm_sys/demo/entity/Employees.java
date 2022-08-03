@@ -12,7 +12,7 @@ public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // tableになる
-    private long employeeId;
+    private long employeeId; //employee_id
     // private String firstName;
     // private String lastName;
     private String fullName;
