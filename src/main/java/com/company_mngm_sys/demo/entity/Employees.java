@@ -42,6 +42,14 @@ public class Employees {
         this.birthday = birthday;
     }
 
+    public long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
+    }
+
     
 
 }
