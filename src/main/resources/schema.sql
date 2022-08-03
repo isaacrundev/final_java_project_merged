@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS clients(
 );
 
 
-CREATE SEQUENCE IF NOT EXISTS products_seq;
-CREATE TABLE IF NOT EXISTS products(
-    productsId BIGINT NOT NULL DEFAULT nextval('products_seq') PRIMARY KEY,
-    productName VARCHAR(100) NOT NULL,
-    price VARCHAR(100) NOT NULL
-);
+-- CREATE SEQUENCE IF NOT EXISTS products_seq;
+-- CREATE TABLE IF NOT EXISTS products(
+--     productsId BIGINT NOT NULL DEFAULT nextval('products_seq') PRIMARY KEY,
+--     productName VARCHAR(100) NOT NULL,
+--     price VARCHAR(100) NOT NULL
+-- );
