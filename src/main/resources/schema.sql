@@ -10,10 +10,11 @@ CREATE TABLE IF NOT EXISTS employee(
 
 CREATE SEQUENCE IF NOT EXISTS clients_seq;
 CREATE TABLE IF NOT EXISTS clients(
-   companyName BIGINT NOT NULL DEFAULT nextval('clients_seq') PRIMARY KEY,
-   contactPerson VARCHAR(100) NOT NULL,
-   phoneNumber VARCHAR(100) NOT NULL,
-   emailAddress VARCHAR(100) NOT NULL,
+   client_id BIGINT NOT NULL DEFAULT nextval('clients_seq') PRIMARY KEY,
+   company_name VARCHAR(100) NOT NULL,
+   contact_person VARCHAR(100) NOT NULL,
+   phone_number VARCHAR(100) NOT NULL,
+   email_address VARCHAR(100) NOT NULL,
    department VARCHAR(100) NOT NULL,
    position VARCHAR(100) NOT NULL,
    notes VARCHAR(256) NULL
