@@ -1,5 +1,6 @@
 package com.company_mngm_sys.demo.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,13 +10,18 @@ import javax.persistence.Id;
 // pojo
 public class Employees {
 
+    // updated 8月3日: added employeeID, @column
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // tableになる
-    private long employeeID;
-    // private String firstName;
-    // private String lastName;
+    // @Column(name = "id")
+    // private long employeeID;
+
+    @Column(name = "fullName")
     private String fullName;
+
+    @Column(name = "birthday")
     private int birthday;
 
     public Employees() {
@@ -25,6 +31,12 @@ public class Employees {
         this.fullName = fullName;
         this.birthday = birthday;
     }
+
+    // public Employees(int id, String fullName, int birthday) {
+    // this.employeeID = id;
+    // this.fullName = fullName;
+    // this.birthday = birthday;
+    // }
 
     public String getFullName() {
         return fullName;
@@ -41,7 +53,5 @@ public class Employees {
     public void setBirthday(int birthday) {
         this.birthday = birthday;
     }
-
-    
 
 }

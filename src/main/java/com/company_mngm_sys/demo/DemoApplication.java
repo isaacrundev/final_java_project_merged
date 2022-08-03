@@ -1,6 +1,7 @@
 package com.company_mngm_sys.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 
 //don't change
 
@@ -11,7 +12,7 @@ import com.company_mngm_sys.demo.dao.EmployeeRepo;
 import com.company_mngm_sys.demo.entity.Employees;
 
 @SpringBootApplication
-public class DemoApplication {
+public class DemoApplication implements CommandLineRunner {
 
 	@Autowired
 	EmployeeRepo empRepo;
@@ -22,9 +23,13 @@ public class DemoApplication {
 		// sample data
 	}
 
-	public void run() {
+	
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
 		Employees em1 = new Employees("fullName", 12071995);
 		empRepo.save(em1);
+		
 	}
 
 }

@@ -1,5 +1,3 @@
-//employee controleer
-
 package com.company_mngm_sys.demo.web;
 
 import java.util.List;
@@ -17,7 +15,6 @@ import com.company_mngm_sys.demo.entity.Employees;
 @Controller // employeeをaddする用のクラス
 @RequestMapping("/employees") // URLとコントローラーのクラスまたはメソッドを紐づけることができるアノテーション
 // employeeの下に下記の表示されます(request by default)
-
 public class EmployeesController {
 
     @Autowired
@@ -43,7 +40,7 @@ public class EmployeesController {
     // I'm gonna redirect to this page after adding
     @PostMapping("/save")
     public String createEmployees(Employees employees) {
-        // product.setProductId(0);??
+        // employees.setEmployeeID(0);
         repo.save(employees);
         return "redirect:/employees"; // コロンはリクエストを返す
 

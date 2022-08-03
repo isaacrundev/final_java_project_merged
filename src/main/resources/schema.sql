@@ -1,7 +1,7 @@
 CREATE SEQUENCE IF NOT EXISTS hibernate_sequence;
 CREATE SEQUENCE IF NOT EXISTS employee_seq;
 
-CREATE TABLE IF NOT EXISTS employee(
+CREATE TABLE IF NOT EXISTS employees(
     employee_id BIGINT NOT NULL DEFAULT nextval('employee_seq') PRIMARY KEY,
     fullName VARCHAR(100) NOT NULL,
     birthday VARCHAR(100) NOT NULL
