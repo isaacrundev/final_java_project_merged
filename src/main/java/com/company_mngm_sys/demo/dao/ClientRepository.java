@@ -9,4 +9,6 @@ import com.company_mngm_sys.demo.entity.Clients;
 public interface ClientRepository extends CrudRepository<Clients, Long> {
     @Override
     public List<Clients> findAll();
+
+    public Clients findByClientId(Long id);
 }
