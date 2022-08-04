@@ -50,4 +50,7 @@ public class Employees {
         this.employeeId = employeeId;
     }
 
+    public void setProductCategoryId(int categoryId) {
+    }
+
 }

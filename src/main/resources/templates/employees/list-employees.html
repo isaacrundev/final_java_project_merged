@@ -17,7 +17,6 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
   <body>
-    
     <nav th:replace="layouts :: navbar"></nav>
 
     <div class="container">
@@ -31,6 +30,8 @@
           <tr>
             <th>Employee FullName</th>
             <th>Employee Birthday</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
 
@@ -38,45 +39,24 @@
           <tr th:each="field: ${employees}">
             <td th:text="${field.fullName}"></td>
             <td th:text="${field.birthday}"></td>
+            <td>
+              <a
+                th:href="@{'/employees/edit/'}"
+                class="btn btn-primary btn-sm mb-3"
+                >Edit</a
+              >
+            </td>
+            <td>
+              <a
+                th:href="@{'/employees/delete/'}"
+                onclick="return confirm('Are you sure to delete?')"
+                class="btn btn-primary btn-sm mb-3"
+                >Delete</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </body>
 </html>
-
-<!-- <!DOCTYPE html>
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head th:replace="layouts :: head"></head>
-  <body>
-    <nav th:replace="layouts :: navbar"></nav>
-
-    <div class="container">
-      <h4>Employee List</h4>
-      <hr />
-      <a th:href="@{/employees/new}" class="btn btn-primary btn-sm mb-3"
-        >New Employee</a
-      >
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th>Employee First Name</th>
-            <th>Employee Last Name</th>
-            <th>Employee Email</th>
-            <th>Employee Birthday</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr th:each="field: ${employees}">
-            <td th:text="${field.firstName}"></td>
-            <td th:text="${field.lastName}"></td>
-            <td th:text="${field.email}"></td>
-            <td th:text="${field.birthday}"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
-</html> -->
