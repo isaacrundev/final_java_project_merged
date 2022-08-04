@@ -9,4 +9,6 @@ public interface EmployeeRepo extends CrudRepository<Employees, Long> {
     @Override
     public List<Employees> findAll();
 
+    public Employees findByEmployeeId(Integer id);
+
 }
