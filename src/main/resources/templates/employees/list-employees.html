@@ -41,14 +41,14 @@
             <td th:text="${field.birthday}"></td>
             <td>
               <a
-                th:href="@{'/employees/edit/'}"
+                th:href="@{'/employees/edit/' + ${field.employeeId}}"
                 class="btn btn-primary btn-sm mb-3"
                 >Edit</a
               >
             </td>
             <td>
               <a
-                th:href="@{'/employees/delete/'}"
+                th:href="@{'/employees/delete/' + ${field.employeeId}}"
                 onclick="return confirm('Are you sure to delete?')"
                 class="btn btn-primary btn-sm mb-3"
                 >Delete</a

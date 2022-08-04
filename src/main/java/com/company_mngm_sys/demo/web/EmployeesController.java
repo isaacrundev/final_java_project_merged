@@ -51,11 +51,10 @@ public class EmployeesController {
     }
 
     @PostMapping("/edit_save/{id}")
-    public String editSaveEmployees(Employees Employees, @RequestParam int categoryId, @RequestParam int employeeId,
-            @PathVariable("id") Integer id) {
+    public String editSaveEmployees(Employees Employees, @RequestParam Long employeeId,
+            @PathVariable("id") Long id) {
         Employees.setEmployeeId(id);
         System.out.println(Employees.getEmployeeId());
-        Employees.setProductCategoryId(categoryId);
         Employees.setEmployeeId(employeeId);
 
         repo.save(Employees);
@@ -63,7 +62,7 @@ public class EmployeesController {
     }
 
     @GetMapping("/delete/{id}")
-    public String createEmployee(Model model, @PathVariable("id") Integer id) {
+    public String deleteEmployee(Model model, @PathVariable("id") Long id) {
         Employees employee = repo.findByEmployeeId(id);
         repo.delete(employee);
 
