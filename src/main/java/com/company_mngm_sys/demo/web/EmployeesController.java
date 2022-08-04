@@ -50,13 +50,17 @@ public class EmployeesController {
         return "redirect:/employees"; // コロンはリクエストを返す
     }
 
+    @GetMapping("/edit/{id}")
+    public String editClient(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("employees", repo.findByEmployeeId(id));
+        return "employees/edit-employees";
+    }
+
     @PostMapping("/edit_save/{id}")
-    public String editSaveEmployees(Employees Employees, @RequestParam Long employeeId,
+    public String editSaveEmployees(Employees Employees,
             @PathVariable("id") Long id) {
         Employees.setEmployeeId(id);
         System.out.println(Employees.getEmployeeId());
-        Employees.setEmployeeId(employeeId);
-
         repo.save(Employees);
         return "redirect:/employees";
     }

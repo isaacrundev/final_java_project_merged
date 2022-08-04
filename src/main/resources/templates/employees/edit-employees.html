@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layouts :: head(title='Employees')">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+  </head>
+  <body>
+    <nav th:replace="layouts :: navbar"></nav>
+
+    <div class="container">
+      <form
+        th:action="@{'/employees/edit_save/' + *{employeeId}}"
+        method="POST"
+        th:object="${employees}"
+      >
+        <fieldset>
+          <h4>Edit Client</h4>
+          <hr class="mb-4" />
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter Full Name"
+              th:field="*{fullName}"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Birthday</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter Birthday"
+              th:field="*{birthday}"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
