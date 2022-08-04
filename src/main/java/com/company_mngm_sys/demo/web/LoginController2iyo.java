@@ -13,7 +13,7 @@ import com.company_mngm_sys.demo.entity.Login2iyo;
 
 
 @Controller 
-@RequestMapping("/login2")
+@RequestMapping("/")
 public class LoginController2iyo {
 
     @Autowired
@@ -42,7 +42,7 @@ public class LoginController2iyo {
         // 入力された名前で見つかったレコードの内一番上のレコードの誕生日とフォームで入力された誕生日を比較
         if(authUsers.get(0).getBirthday() == birthday){
             // マッチすれば商品一覧へ
-            return "redirect:/products";
+            return "redirect:/employees";
 
         }else{
             // アンマッチならログイン画面に戻す

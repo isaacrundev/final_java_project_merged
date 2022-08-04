@@ -6,29 +6,39 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
+    <!-- <head th:replace="layouts :: head(title='Home')"> -->
     </head>
-  <!-- <head th:replace="layouts :: head(title='Home')"> -->
-  	<script src="">
-  	</script>
-  </head>
-  <body>
-    <nav th:replace="layouts_login :: navbar"></nav>
-    
-    <div class="simpleLogin">
+    <body>
+        <nav th:replace="layouts_login :: navbar"></nav>
+        
+        <div class="simpleLogin">
 
-        <!-- actionにあるパスがsubmitボタンを押した時に飛ぶPOSTリクエストのパスになる。 -->
+            <!-- actionにあるパスがsubmitボタンを押した時に飛ぶPOSTリクエストのパスになる。 -->
 
-        <!-- ↓action内の"/login2/doLogin"部分を自分のLoginControllerで設定したURLに変更してください-->
-        <!-- ログインボタンを押したときの遷移先画面の設定をするソース-->
-        <form action="/login2/doLogin" method="POST" >
-            <legend> ** Welcome To IHAI.Co ** dummy by iyo</legend>
-            <fieldset>
-                <label class="form-label">full Name</label>
-                    <input name="name" placeholder="Full Name" type="text" >
-                    <input name="birthday" placeholder="Password" type="password" >
-                    <button type="submit">Login</button>
-            </fieldset>
-        </form>
-    </div>
-  </body>
+            <!-- ↓action内の"/login2/doLogin"部分を自分のLoginControllerで設定したURLに変更してください-->
+            <!-- ログインボタンを押したときの遷移先画面の設定をするソース-->
+            <form id="loginForm" action="/doLogin" method="POST" onSubmit="return check()">
+                <legend> ** Welcome To IHAI.Co **test</legend>
+                <fieldset>
+                    <label class="formLabel">full Name</label>
+                        <input name="name" placeholder="Full Name" type="text" >
+                        <input name="birthday" placeholder="Password" type="password" >
+                        <button type="submit">Login</button>
+                </fieldset>
+            </form>
+        </div>
+        <script language="JavaScript">
+            function check() {
+                if(document.forms.loginForm.name.value == "" || document.forms.loginForm.name.value == null) {
+                    alert("input your name");
+                    return false;
+                }
+                if(document.forms.loginForm.birthday.value == "" || document.forms.loginForm.birthday.value == null) {
+                    alert("input your birthday");
+                    return false;
+                }
+                
+            }
+        </script>
+    </body>
 </html>
