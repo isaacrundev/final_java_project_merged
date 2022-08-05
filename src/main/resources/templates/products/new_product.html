@@ -11,13 +11,14 @@
         <nav th:replace="layouts :: navbar"></nav>
 
         <div class="container">
-            <form action="/products/save" method="POST" th:object="${anything}">
+            <form action="/products/save" id="productForm" method="POST" th:object="${anything}" onSubmit="return check()">
               <fieldset>
                 <h4>New Product</h4>
                 <hr class="mb-4" />
                 <div class="mb-3">
                   <label class="form-label">Name</label>
                   <input
+                    id="name"
                     class="form-control"
                     type="text"
                     placeholder="Product Name"
@@ -27,6 +28,7 @@
                 <div class="mb-3">
                   <label class="form-label">Price</label>
                   <input
+                    id="price"
                     class="form-control"
                     type="number"
                     placeholder="Enter Product Price"
@@ -54,4 +56,17 @@
           </div>
     </body>
 
+    <script language="JavaScript">
+      function check() {
+          if(document.forms.productForm.name.value == "" || document.forms.productForm.name.value == null) {
+              alert("Please input product name");
+              return false;
+          }
+          if(document.forms.productForm.price.value == "" || document.forms.productForm.price.value == null) {
+              alert("Please input price");
+              return false;
+          }
+          
+      }
+  </script>
 </html>
