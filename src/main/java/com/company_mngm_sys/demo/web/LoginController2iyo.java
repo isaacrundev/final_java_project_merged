@@ -21,14 +21,14 @@ public class LoginController2iyo {
 
     @GetMapping
     public String home(Model model) {
-        return "/products/index2iyo";
+        return "/index";
     }
 
     // templateのhtmlでformのactionに指定したパス
     @PostMapping("/doLogin")
 
     // RequestParamでFormの各アイテムに入力した値を取得する
-    public String login(@RequestParam String name, int birthday){
+    public String login(@RequestParam String name, @RequestParam int birthday){
 
         // Repositoryで定義した名前での検索メソッドnameはformで入力したfullNameが入っている
         List<Login2iyo> authUsers = loginRepo2.findByFullName(name);
@@ -36,7 +36,7 @@ public class LoginController2iyo {
 
         // 入力された名前で1件もレコードが見つからなかった場合、ログイン画面に戻す
         if(authUsers.size() == 0){
-            return "/products/index2iyo";
+            return "/index";
         }
 
         // 入力された名前で見つかったレコードの内一番上のレコードの誕生日とフォームで入力された誕生日を比較
@@ -46,7 +46,7 @@ public class LoginController2iyo {
 
         }else{
             // アンマッチならログイン画面に戻す
-            return "/products/index2iyo";
+            return "/index";
         }
         
     }

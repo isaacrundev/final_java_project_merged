@@ -1,42 +1,45 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <!-- <head th:replace="layouts :: head(title='Home')"> -->
-  	<script src="">
-  	</script>
-  </head>
-  <body>
+    <head th:replace="layouts :: head(title='Login')">
 
-    <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
-      <a class="navbar-brand" href="/employees">IHAI co.</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/employees">Employees</a>
-          <a class="nav-item nav-link" href="/clients">Clients</a>
-          <a class="nav-item nav-link" href="/products">Products</a>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    <!-- <head th:replace="layouts :: head(title='Home')"> -->
+        <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /> -->
+    </head>
+    <body>
+        <nav th:replace="layouts_login :: navbar"></nav>
+        
+        <div class="simpleLogin">
+
+            <!-- actionにあるパスがsubmitボタンを押した時に飛ぶPOSTリクエストのパスになる。 -->
+
+            <!-- ↓action内の"/login2/doLogin"部分を自分のLoginControllerで設定したURLに変更してください-->
+            <!-- ログインボタンを押したときの遷移先画面の設定をするソース-->
+            <form id="loginForm" class = "loginForm" action="/doLogin" method="POST" onSubmit="return check()">
+                <legend> ** Welcome To IHAI.Co **</legend>
+                <fieldset>
+                    <label class="formLabel">full Name</label>
+                        <input name="name" placeholder="Full Name" type="text" >
+                        <input name="birthday" placeholder="Password" type="password" >
+                        <button type="submit">Login</button>
+                </fieldset>
+            </form>
         </div>
-      </div>
-    </nav>-->
-  
-                  <div class="simpleLogin">
-                            <form>
-                            <legend> ** Welcome To IHAI.Co **test</legend>
-                            <fieldset>
-                                <input id="name" placeholder="Full Name" type="text">
-                                <input id="pass" placeholder="Password" type="password">
-                                <input id="submit" type="submit" value="Log in">
-                            </fieldset>
-                            </form>
-                          </div>
-  </body>
+        <script language="JavaScript">
+            function check() {
+                if(document.forms.loginForm.name.value == "" || document.forms.loginForm.name.value == null) {
+                    alert("input your name");
+                    return false;
+                }
+                if(document.forms.loginForm.birthday.value == "" || document.forms.loginForm.birthday.value == null) {
+                    alert("input your birthday");
+                    return false;
+                }
+                
+            }
+        </script>
+    </body>
 </html>
