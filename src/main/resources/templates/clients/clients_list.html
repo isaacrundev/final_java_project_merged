@@ -24,6 +24,8 @@
         <th>Department</th>
         <th>Position</th>
         <th>Notes</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </thead>
       <tbody>
         <tr th:each="field:${clientList}">
@@ -34,6 +36,21 @@
           <td th:text="${field.department}"></td>
           <td th:text="${field.position}"></td>
           <td th:text="${field.notes}"></td>
+          <td>
+            <a
+              th:href="@{'/clients/edit/' + ${field.clientId}}"
+              class="btn btn-primary btn-sm mb-3"
+              >Edit</a
+            >
+          </td>
+          <td>
+            <a
+              th:href="@{'/clients/delete/' + ${field.clientId}}"
+              onclick="return confirm('Are you sure to delete?')"
+              class="btn btn-primary btn-sm mb-3"
+              >Delete</a
+            >
+          </td>
         </tr>
       </tbody>
     </table>

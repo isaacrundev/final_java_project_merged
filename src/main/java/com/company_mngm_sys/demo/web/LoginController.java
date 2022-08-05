@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller 
 public class LoginController {
 
-    @RequestMapping("/")//login page
+    @RequestMapping("/example")//login page
     public String home(/*Model model*/) {
         //model.addAttribute("formData", new User());
         return "index";

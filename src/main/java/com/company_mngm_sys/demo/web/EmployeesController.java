@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.company_mngm_sys.demo.dao.EmployeeRepo;
 import com.company_mngm_sys.demo.entity.Employees;
@@ -46,7 +48,29 @@ public class EmployeesController {
         // product.setProductId(0);??
         repo.save(employees);
         return "redirect:/employees"; // コロンはリクエストを返す
+    }
 
+    @GetMapping("/edit/{id}")
+    public String editClient(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("employees", repo.findByEmployeeId(id));
+        return "employees/edit-employees";
+    }
+
+    @PostMapping("/edit_save/{id}")
+    public String editSaveEmployees(Employees Employees,
+            @PathVariable("id") Long id) {
+        Employees.setEmployeeId(id);
+        System.out.println(Employees.getEmployeeId());
+        repo.save(Employees);
+        return "redirect:/employees";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(Model model, @PathVariable("id") Long id) {
+        Employees employee = repo.findByEmployeeId(id);
+        repo.delete(employee);
+
+        return "redirect:/employees";
     }
 
 }

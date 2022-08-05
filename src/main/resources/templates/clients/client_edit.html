@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layouts :: head(title='Clients')">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clients</title>
+  </head>
+  <body>
+    <nav th:replace="layouts :: navbar"></nav>
+
+    <div class="container">
+      <form
+        th:action="@{'/clients/edit_save/' + *{clientId}}"
+        method="POST"
+        th:object="${client}"
+      >
+        <fieldset>
+          <h4>Edit Client</h4>
+          <hr class="mb-4" />
+          <div class="mb-3">
+            <label class="form-label">Company Name</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter Company Name"
+              th:field="*{companyName}"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Contact Person Name</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter Contact Person Name"
+              th:field="*{contactPerson}"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter Phone Number"
+              th:field="*{phoneNumber}"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter Email"
+              th:field="*{emailAddress}"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Department</label>
+            <br />
+            <select th:field="*{department}">
+              <option th:value="Administration">Administration</option>
+              <option th:value="Human_Resources">Human Resources</option>
+              <option th:value="Sales">Sales</option>
+              <option th:value="Marketing">Marketing</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <!-- person in charge -->
+            <label class="form-label">Position</label>
+            <br />
+            <select th:field="*{position}">
+              <option th:value="CEO">CEO</option>
+              <option th:value="Manager">Manager</option>
+              <option th:value="Supervisor">Supervisor</option>
+              <option th:value="Officer">Officer</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label>Notes</label> <br />
+            <textarea cols="30" rows="10" th:field="*{notes}"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
