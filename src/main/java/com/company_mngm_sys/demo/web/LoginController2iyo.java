@@ -21,7 +21,7 @@ public class LoginController2iyo {
 
     @GetMapping
     public String home(Model model) {
-        return "/index";
+        return "index";
     }
 
     // templateのhtmlでformのactionに指定したパス
@@ -36,7 +36,7 @@ public class LoginController2iyo {
 
         // 入力された名前で1件もレコードが見つからなかった場合、ログイン画面に戻す
         if(authUsers.size() == 0){
-            return "/index";
+            return "index";
         }
 
         // 入力された名前で見つかったレコードの内一番上のレコードの誕生日とフォームで入力された誕生日を比較
@@ -46,7 +46,7 @@ public class LoginController2iyo {
 
         }else{
             // アンマッチならログイン画面に戻す
-            return "/index";
+            return "index";
         }
         
     }
