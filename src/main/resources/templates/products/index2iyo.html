@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
     <!-- <head th:replace="layouts :: head(title='Home')"> -->
+        <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /> -->
     </head>
     <body>
         <nav th:replace="layouts_login :: navbar"></nav>
@@ -17,8 +18,8 @@
 
             <!-- ↓action内の"/login2/doLogin"部分を自分のLoginControllerで設定したURLに変更してください-->
             <!-- ログインボタンを押したときの遷移先画面の設定をするソース-->
-            <form id="loginForm" action="/doLogin" method="POST" onSubmit="return check()">
-                <legend> ** Welcome To IHAI.Co **test</legend>
+            <form id="loginForm" class = "loginForm" action="/doLogin" method="POST" onSubmit="return check()">
+                <legend> ** Welcome To IHAI.Co **</legend>
                 <fieldset>
                     <label class="formLabel">full Name</label>
                         <input name="name" placeholder="Full Name" type="text" >

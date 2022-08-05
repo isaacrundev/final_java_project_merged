@@ -28,7 +28,7 @@ public class LoginController2iyo {
     @PostMapping("/doLogin")
 
     // RequestParamでFormの各アイテムに入力した値を取得する
-    public String login(@RequestParam String name, int birthday){
+    public String login(@RequestParam String name, @RequestParam int birthday){
 
         // Repositoryで定義した名前での検索メソッドnameはformで入力したfullNameが入っている
         List<Login2iyo> authUsers = loginRepo2.findByFullName(name);
